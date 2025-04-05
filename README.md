@@ -1,28 +1,26 @@
-# Lab Project 03 - Análise de sentimentos com Language Studio no Azure AI
-**Sentiment and opinion mining** é uma solução da plataforma **Language Studio, da Azure**, que permite **detectar sentimentos positivos, negativos e neutros** a partir de sentenças. Esse repositório mostra alguns exemplos de testes na plataforma. Os procedimentos foram realizados como parte do **Bootcamp Microsoft Azure AI Fundamentals, da DIO**.
+## 💬 Lab 03 – Análise de Sentimentos com Azure Language Studio
+Este projeto faz parte do Bootcamp Microsoft Azure AI Fundamentals, promovido pela DIO. Aqui foram realizados testes com a ferramenta Language Studio do Microsoft Azure, focando no recurso de sentiment analysis e opinion mining — que identificam sentimentos (positivos, negativos, neutros) em textos fornecidos.
 
-![Static Badge](https://img.shields.io/badge/Status_Projeto:-Concluído_(15/Mar/2024)-green)
 
-![Static Badge](https://img.shields.io/badge/Inteligência_Artificial_(IA)-blue)
-![Static Badge](https://img.shields.io/badge/NLP-blue)
-![Static Badge](https://img.shields.io/badge/Speech_Recognition-blue)
-![Static Badge](https://img.shields.io/badge/Sentiment_Mining-blue)
-![Static Badge](https://img.shields.io/badge/Opinion_Mining-blue)
-![Static Badge](https://img.shields.io/badge/Microsoft_Azure-blue)
-![Static Badge](https://img.shields.io/badge/Azure_Language_Studio-blue)
+## 🧠 Tecnologias e Temas
 
-## Índice
-1. [Procedimento](#procedimento)
-2. [Resultados](#resultados)
-3. [Conclusão e Insights](#conclusão-e-insights)
 
-## Procedimento
-Esses experimentos foram baseados nos guias da Microsoft Learn. Para informações mais detalhadas, consulte a página [Analyze text with Language Studio](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/06-text-analysis.html).
+## 📌 Índice
+⚙️ Configuração do Ambiente
 
-### Criar um recurso Azure Language Service
-Para ser possível usar o Language Studio, é essencial que você possua um recurso para a plataforma associado a sua conta Azure. Isso pode ser feito por meio dos seguintes passos:
-1. Acessar https://portal.azure.com
-2. Criar um novo recurso **Language Service** através da opção Create Resource.
+📊 Resultados e Observações
+
+🧾 Conclusões e Insights
+
+⚙️ Configuração do Ambiente
+O processo seguiu os passos do guia oficial da Microsoft.
+
+🔧 Criando o recurso no Azure
+Acesse o Portal do Azure
+
+Crie um recurso do tipo Language Service
+
+Aguarde a finalização do deploy
 
 <div align="center">
     <img src="readmeFiles/01.png" alt="Create a resource" width="600"/>
@@ -32,39 +30,40 @@ Para ser possível usar o Language Studio, é essencial que você possua um recu
     <img src="readmeFiles/03.png" alt="Create a resource" width="600"/>
 </div>
 
-3. Esperar o *deploy* do recurso terminar.
+## 🔗 Conectando ao Language Studio
+Acesse o Azure Language Studio
 
-### Selecionar recurso no Language Studio
-Com o recurso Language Service criado, é preciso conecta-lo ao Language Studio. Para isso, basta seguir os seguintes passos:
+Clique em "Select a resource"
 
-1. Acessar o [Language Studio](https://language.cognitive.azure.com/home).
-2. Na página inicial, acessar os recursos criados através do botão "Select a resouce".
+Escolha o recurso criado anteriormente
 
 <div align="center">
     <img src="readmeFiles/04.png" alt="View all resources" width="800"/>
 </div>
 
-3. Preencha as informações e selecione o recurso recém criado.
-
 <div align="center">
     <img src="readmeFiles/05.png" alt="Set default resource" width="800"/>
 </div>
 
-### Selecionando e testando o serviço no Language Studio
-Ao retornar a página inicial após concluídos os passos anteriores, é possível ver a lista de serviços disponíveis para teste na plataforma. Nesse experimento foi usado o serviço "Analyze sentiment and mine opinions", na aba "Classify text".
+## 🧪 Iniciando a análise
+Após a conexão, usei o serviço “Analyze sentiment and mine opinions”, na seção Classify text.
 
 <div align="center">
     <img src="readmeFiles/06.png" alt="Language Studio Services" width="800"/>
 </div>
 
-## Resultados
-Ao acessar o serviço é possível carregar o texto a ser analisado, selecionar sua linguagem e também ativar a opção de opinion mining. Para esse experimento, selecionei um capítulo do livro de Mateus, da Bíblia. 
+## 📊 Resultados e Observações
+Usei como base um trecho do livro de Mateus, da Bíblia Sagrada, para fins de teste.
 
+▶️ Interface de análise
 <div align="center">
     <img src="readmeFiles/07.png" alt="Language Studio Services" width="800"/>
 </div>
 
-Abaixo podemos ver o resultado da análise de sentimento de todo o texto. De acordo com os resultados, o texto é majoritariamente negativo (65%). Contudo, a confiança do resultado informado é de apenas 25%. É interesante notar que algumas sentenças obtiveram boa taxa de *confidence*, enquanto outras foram consideradas 100% negativas com 0% de confiança.
+O sistema apontou que 65% do texto era negativo, mas a confiança geral era baixa (25%). Algumas frases mostraram confiança alta, enquanto outras tinham 0% de confiança, mesmo sendo classificadas como totalmente negativas.
+
+Sentimento	      Porcentagem	    Confiança Média
+ Negativo	          65%	               25%
 
 <div align="center">
     <img src="readmeFiles/08.png" alt="Language Studio Services" width="400"/>
@@ -83,11 +82,28 @@ Abaixo podemos ver o resultado da análise de sentimento de todo o texto. De aco
 </div>
 
 
-Abaixo é possível observar a funcionalidade de *opinion mining* funcionando:
+## 💬 Opinion Mining
+A funcionalidade de mineração de opinião também estava ativada e mostrou alguns relacionamentos entre palavras e opiniões extraídas.
 
 <div align="center">
     <img src="readmeFiles/10.png" alt="Language Studio Services" width="600"/>
 </div>
 
-## Conclusão e Insights
-Ferramentas de análise de sentimentos e opiniões podem ser muito úteis na automação de análises de *feedbacks* para serviços. Apesar desse recurso funcionar muito bem para textos que claramente visam expressar sentimentos, como é o caso de comentários e avaliações de produtos, a ferramenta não parece se sair tão bem em textos onde essa expressão não é tão clara. Acredito que esse resultado se deve ao fato de que a ferramenta analisa apenas uma sentença por vez e não parece levar em consideração todo o contexto. Penso que uma tecnologia capaz de estabelecer conexões entre sentenças e obter um entendimento geral sobre o contexto de todo o texto possivelmente seria mais bem sucedida nessa análise. 
+## 🧾 Conclusões e Insights
+A experiência foi positiva, especialmente por entender como ferramentas de IA podem ser aplicadas na análise de textos e sentimentos.
+
+✅ Pontos fortes:
+Fácil de usar via interface do Language Studio
+
+Processamento automático e rápido
+
+Útil para feedbacks e avaliações
+
+⚠️ Limitações percebidas:
+Baixa confiança em textos com linguagem bíblica/formal
+
+A análise é feita frase por frase, ignorando o contexto geral
+
+Resultados podem parecer inconsistentes quando o texto não é claramente opinativo
+
+Uma análise baseada em contexto e correlação entre frases poderia melhorar bastante os resultados.
